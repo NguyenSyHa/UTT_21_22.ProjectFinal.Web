@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UTT_21_22.ProjectFinal.Data.Databases
@@ -12,5 +13,7 @@ namespace UTT_21_22.ProjectFinal.Data.Databases
         [Column(TypeName ="nvarchar")]
         [MaxLength(20)]
         public string CategoryPostName { get; set; }
+
+        public ICollection<Post> Posts { get; set; }
     }
 }

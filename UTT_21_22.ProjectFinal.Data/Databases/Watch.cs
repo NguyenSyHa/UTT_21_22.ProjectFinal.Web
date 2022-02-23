@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -45,5 +46,14 @@ namespace UTT_21_22.ProjectFinal.Data.Databases
         public double? Price { get; set; }
 
         public byte[] Image { get; set; }
+
+        [Column(TypeName = "varchar")]
+        [MinLength(10)]
+        public string ReviewId { get; set; }
+
+        [ForeignKey("ReviewId")]
+        public Review Review { get; set; }
+
+        public ICollection<StoreWatch> StoreWatches { get; set; }
     }
 }

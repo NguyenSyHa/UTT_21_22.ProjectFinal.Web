@@ -4,17 +4,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UTT_21_22.ProjectFinal.Data.Databases
 {
-    public class Color
+    public class CategoryStore
     {
         [Key]
-        public int ColorId { get; set; }
+        public int CategoryStoreId { get; set; }
 
         [Required]
         [Column(TypeName = "nvarchar")]
-        [MaxLength(25)]
-        public string ColorName { get; set; }
+        [MaxLength(30)]
+        public string CategoryStoreName { get; set; }
 
-        public ICollection<Watch> Watches { get; set; }
-
+        public ICollection<Store> Stores { get; set; }
     }
 }

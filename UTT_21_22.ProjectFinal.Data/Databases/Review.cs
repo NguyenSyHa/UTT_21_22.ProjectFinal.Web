@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -25,5 +26,11 @@ namespace UTT_21_22.ProjectFinal.Data.Databases
 
         [Required]
         public DateTime TimeModified { get; set; }
+
+        public ICollection<Store> Stores { get; set; }
+
+        public ICollection<Watch> Watches { get; set; }
+
+        public ICollection<Post> Posts { get; set; }
     }
 }

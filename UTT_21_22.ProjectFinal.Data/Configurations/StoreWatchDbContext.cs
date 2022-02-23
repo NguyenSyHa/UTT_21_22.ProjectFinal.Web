@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using UTT_21_22.ProjectFinal.Data.Databases;
 
-namespace UTT_21_22.ProjectFinal.Web.Data
+namespace UTT_21_22.ProjectFinal.Data.Configurations
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class StoreWatchDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseSqlServer(@"Server=.\SQL2017;Database=StoreWatchInformationDB;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

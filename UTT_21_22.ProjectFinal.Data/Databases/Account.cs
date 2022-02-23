@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -10,8 +11,9 @@ namespace UTT_21_22.ProjectFinal.Data.Databases
         public int AccountId { get; set; }
 
         public int CategoryAccountId { get; set; }
+
         [ForeignKey("CategoryAccountId")]
-        public Account CategoryAccount { get; set; }
+        public CategoryAccount CategoryAccount { get; set; }
 
         [Required]
         [Column(TypeName = "varchar")]
@@ -37,5 +39,9 @@ namespace UTT_21_22.ProjectFinal.Data.Databases
 
         [Required]
         public DateTime TimeExpired { get; set; }
+
+        public ICollection<Admin> Admins { get; set; }
+
+        public ICollection<Customer> Customers { get; set; }
     }
 }

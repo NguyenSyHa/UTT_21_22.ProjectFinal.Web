@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -25,5 +26,7 @@ namespace UTT_21_22.ProjectFinal.Data.Databases
         public string Description { get; set; }
 
         public DateTime CreateTime { get; set; }
+
+        public ICollection<Watch> Watches { get; set; }
     }
 }
