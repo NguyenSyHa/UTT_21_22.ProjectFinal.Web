@@ -16,5 +16,7 @@ namespace UTT_21_22.ProjectFinal.Data.Databases
         public int RuleId { get; set; }
         [ForeignKey("RuleId")]
         public Rule Rule { get; set; }
+
+        public int? ParentId { get; set; }
     }
 }
